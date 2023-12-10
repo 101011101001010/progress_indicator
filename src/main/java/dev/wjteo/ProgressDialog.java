@@ -63,8 +63,8 @@ public class ProgressDialog extends JDialog {
     }
 
     private void initSize() {
-        final int width = getPreferredSize().width;
-        final int height = getPreferredSize().height + 28;
+        final int width = getPreferredSize().width + 16; // weird ass shit
+        final int height = getPreferredSize().height + 40; // weird ass shit
         setSize(new Dimension(width, height));
     }
 
@@ -74,7 +74,7 @@ public class ProgressDialog extends JDialog {
             final Random random = new Random();
 
             for (int i = 0; i < TProgressStage.values().length; i++) {
-                long wait = (random.nextInt(4) + 2) * 1000;
+                long wait = (random.nextInt(1) + 1) * 1000;
 
                 try {
                     Thread.sleep(wait);
@@ -83,7 +83,7 @@ public class ProgressDialog extends JDialog {
 
                 int count = 0;
                 for (int j = 0; j < 6; j++) if (random.nextBoolean()) count++;
-                progressIndicator.updateProgress(count > 2);
+                progressIndicator.updateProgress(false);
             }
         };
 

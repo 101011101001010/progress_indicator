@@ -23,7 +23,7 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ProgressIndicator extends JPanel {
-    private static final int BASE_DIMENSION = 60;
+    private static final int BASE_DIMENSION = 48;
     private final ReadWriteLock lock = new ReentrantReadWriteLock();
     private final ExecutorService queueExecutor = Executors.newSingleThreadExecutor();
     private final ExecutorService updateExecutor = Executors.newSingleThreadExecutor();
